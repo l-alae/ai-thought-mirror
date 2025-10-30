@@ -1,0 +1,52 @@
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 40px 20px;
+}
+
+.feather-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  display: inline-block;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 56px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 0%, #e8e8ff 50%, #d0d0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 30px 15px;
+    margin-bottom: 30px;
+  }
+
+  .feather-icon {
+    font-size: 48px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}

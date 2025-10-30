@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal Muse</title>
+
+    <!-- optional basic style -->
+    <style>
+        body {
+            background-color: #0e0e0e;
+            color: #eaeaea;
+            font-family: "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        h1 {
+            margin-bottom: 10px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        form {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 10px;
+            resize: vertical;
+            border: none;
+            border-radius: 6px;
+            background: #1e1e1e;
+            color: #eaeaea;
+            font-size: 15px;
+        }
+        button {
+            width: 160px;
+            padding: 10px;
+            background: #4b6aff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+        button:hover {
+            background: #3552e0;
+        }
+        .reply {
+            margin-top: 30px;
+            max-width: 600px;
+            background: #181818;
+            padding: 20px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🪶 Journal Muse</h1>
+    <p>Write freely. Let the Muse reflect your feelings.</p>
+
+    <!-- the form sends a POST request to "/" -->
+    <form method="POST">
+        <textarea
+            name="journal_entry"
+            placeholder="Write your thoughts here..."
+            required></textarea>
+        <button type="submit">Reflect with Muse</button>
+    </form>
+
+    {% if gpt_reply %}
+    <div class="reply">
+        <h3>Muse says :</h3>
+        <p>{{ gpt_reply }}</p>
+    </div>
+    {% endif %}
+    {% if error_message %}
+    <div style="color: #ff6666; margin-top: 20px;">{{ error_message }}</div>
+    {% endif %}
+</body>
+</html>
